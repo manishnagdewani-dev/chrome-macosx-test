@@ -1,0 +1,18 @@
+os: osx
+osx_image: xcode12.2
+
+# Build OM SDK JS using Node.js/NPM tools.
+language: node_js
+# Use latest Node.js LTS release.
+node_js:
+  - "lts/dubnium"
+
+# https://docs.travis-ci.com/user/environment-variables
+env:
+  HOMEBREW_CASK_OPTS='--appdir=/Applications'
+  global:
+    - VERSION_NUMBER=$(cat public/version.txt | tr -d '\n')
+
+before_install:
+  - brew update > /dev/null
+  - brew cask install google-chrome
