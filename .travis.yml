@@ -10,10 +10,8 @@ node_js:
 # https://docs.travis-ci.com/user/environment-variables
 env:
   global:
-    - VERSION_NUMBER=$(cat public/version.txt | tr -d '\n')
     - HOMEBREW_CASK_OPTS='--appdir=/Applications'
 
 before_install:
   - brew update > /dev/null
-  - brew install google-chrome --cask
-  - google-chrome --version
+  - brew install --cask google-chrome
