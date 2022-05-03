@@ -15,4 +15,4 @@ env:
 
 before_install:
   - brew update > /dev/null
-  - brew cask install google-chrome
+  - brew install google-chrome --cask
